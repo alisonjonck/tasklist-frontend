@@ -1,0 +1,65 @@
+  // Responsive Layout variables
+  @desktop-ext: ~"only screen and (min-width: 1366px)";
+  @desktop: ~"only screen and (min-width: 1022px) and (max-width: 1365px)";
+  @tablet: ~"only screen and (min-width: 766px) and (max-width: 1021px)";
+  @smartphone: ~"only screen and (max-width: 765px)";
+
+
+  .container {
+    display: flex;
+  }
+
+  .main-header{
+    
+    @media @desktop, @desktop-ext{
+      display: flex;
+    }
+    @media @smartphone, @tablet{
+      display: block;
+
+      .btn-info-ads{
+        margin-left: 30px;
+      }
+    }
+    justify-content: space-around;
+    align-items: center;
+
+    h1{
+      font-size: 38px;
+      margin: 50px 0 50px 30px;
+      color: #824196;
+    }
+
+    p{
+      font-size: 24px;
+      text-align: right;
+      max-width: 250px;
+      color:#4c4c4c;
+      margin: 50px 30px 20px 0;
+      
+      @media @smartphone, @tablet{
+      margin-left: 30px;
+      margin-right: 0px;
+    }
+    }
+  }
+  
+  .btn{
+    cursor:pointer;
+
+    &.btn-info-ads {
+      padding: 15px;
+      background-color: #fff;
+      color: #4c4c4c;
+      border: 2px solid #824196;
+
+      &:active,&:hover, &:focus{
+        background-color:#824196;
+        color: #fff;
+
+        &::after{
+          content:' Teste já!'
+        }
+      }
+    }
+  }
